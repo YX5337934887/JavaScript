@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <script type="text/javascript">
+ <!--
+	window.alert=function(s){console.log(s);};
+	function ClassA(sColor) {
+		this.color = sColor;
+		this.sayColor = function () {
+			alert(this.color);
+		};
+	}
+
+	function ClassB(sColor, sName) {
+		this.newMethod = ClassA;
+		this.newMethod(sColor);
+		delete this.newMethod;
+		
+		this.name = sName;
+		this.sayName = function () {
+			alert(this.name);
+		};
+	}
+	var objA = new ClassA("blue");
+	objA.sayColor();	//输出 "blue"
+	var objB = new ClassB("red", "John");
+	objB.sayColor();	//输出 "red"
+	objB.sayName();		//输出 "John"
+	
+ //-->
+ </script>
+ <body>
+  
+ </body>
+</html>

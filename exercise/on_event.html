@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <form name="form"> -->
+			请输入字母或数字：<input type="text" name="letter" />
+		<!-- </form> -->
+	</body>
+		<script>
+			var regex=/[A-Za-z0-9]/;
+			//alert(document.form.letter);
+			/* document.form.letter.onclick=function (){
+				//alert(document.form.letter.value);
+			}; */
+			/* document.form.letter.onchange=function (event){
+				var a="";
+				for(var i in event) {
+					a+="event."+i+":"+event[i]+"<br/>";
+				}
+				document.write(a);
+			}; */
+			document.all.letter.onkeypress=function (event){
+				//alert(event.which);
+				/*
+				var a="";
+				for(var i in event) {
+					a+="event."+i+":"+event[i]+"<br/>";
+				}
+				document.write(a);
+				*/
+				return regex.test(event.key);
+				//return false;
+			};
+			document.all.letter.onfocus=function() {
+				this.style.imeMode='disabled';
+			};
+			/* document.form.letter.onkeydown=function (event){
+				//alert(event.key);
+				var a="";
+				for(var i in event) {
+					a+="event."+i+":"+event[i]+"<br/>";
+				}
+				document.write(a);
+				//return regex.test(event.key);
+				//return false;
+			} */
+		</script>
+</html>

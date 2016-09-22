@@ -1,0 +1,26 @@
+<!doctype html>
+<html">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="js/jquery-1.6.min.js"></script>
+  <script>
+	$(function(){
+		$(".price").live("blur",setPrice);
+	});
+	var priceEle=$(".price");
+	function setPrice(event) {
+		event.target.value=0;
+		priceEle.removeClass("price");
+	}
+	function add() {
+		priceEle.addClass("price");
+	}
+  </script>
+ </head>
+ <body>
+  <input type="text" class="price"/>
+  <input type="text" class="price"/>
+  <input type="button" value="添加" onclick="add()"/>
+ </body>
+</html>
