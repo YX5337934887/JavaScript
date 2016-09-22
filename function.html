@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>function</title>
+  <script type="text/javascript">
+  <!--
+	window.alert=function(s){console.log(s);};
+	function abs(x) {
+		/*if (typeof x !== 'number') {
+			throw 'Not a number';
+		}*/
+		if (x >= 0) {
+			return x;
+		} else {
+			return -x;
+		}
+	}
+	alert(abs(10, 'blablabla')); // 返回10
+	alert(abs(-9, 'haha', 'hehe', null)); // 返回9
+	alert(abs());
+	/*
+	function foo(x) {
+		alert(x); // 10
+		for (var i=0; i<arguments.length; i++) {
+			alert(arguments[i]); // 10, 20, 30
+		}
+	}
+	foo(10, 20, 30);
+	*/
+	function foo(a, b, ...rest) {
+		console.log('a = ' + a);
+		console.log('b = ' + b);
+		console.log(rest);
+	}
+	foo(1, 2, 3, 4, 5);
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
