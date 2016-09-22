@@ -9,24 +9,25 @@
   <title>Document</title>
   <script type="text/javascript">
   <!--
+	window.alert=function(s){console.log(s);};
 	var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
-	console.log(m.get('Michael')); // 95
+	alert(m.get('Michael')); // 95
 	var m = new Map(); // 空Map
 	m.set('Adam', 67); // 添加新的key-value
 	m.set('Bob', 59);
-	console.log(m.has('Adam')); // 是否存在key 'Adam': true
-	console.log(m.get('Adam')); // 67
+	alert(m.has('Adam')); // 是否存在key 'Adam': true
+	alert(m.get('Adam')); // 67
 	m.delete('Adam'); // 删除key 'Adam'
-	console.log(m);
-	console.log(m.get('Adam')); // undefined
+	alert(m);
+	alert(m.get('Adam')); // undefined
 
 	var s1 = new Set(); // 空Set
 	var s = new Set([1, 2, 3]); // 含1, 2, 3
 	s.add(4);
 	s.delete(3);
-	console.log(s);
+	alert(s);
 	for(var a of s)
-		console.log(a);
+		alert(a);
 
   //-->
   </script>
