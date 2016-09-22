@@ -13,6 +13,7 @@
 	var a = ['A', 'B', 'C'];
 	var s = new Set(['A', 'B', 'C']);
 	var m = new Map([[1, 'x'], [2, 'y'], [3, 'z']]);
+	//for ... of循环是ES6引入的新的语法
 	for (var x of a) { // 遍历Array
 		alert(x);
 	}
@@ -22,9 +23,15 @@
 	for (var x of m) { // 遍历Map
 		alert(x[0] + '=' + x[1]);
 	}
-	a.name = 'Hello';
+	//使用解构
+	for (var [key, value] of m) {
+	   console.log("key:"+key + "，value:" + value);
+	}
+
 	alert("a 增加 hello");
+	a.name = 'Hello';
 	alert("for of 遍历");
+	//for of 遍历只循环集合本身的元素
 	for (var x of a) { // 遍历Array
 		alert(x);
 	}
