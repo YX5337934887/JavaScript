@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style>
+	table{
+		width:600px;
+		text-align:center;
+		border:1px solid red;
+		border-collapse:collapse;
+	}
+	td,th{
+		border:1px solid red;
+		height:30px;
+	}
+	th{
+		background-color:#6d6d6d;
+	}
+  </style>
+  
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		$("table>tbody>tr:odd").css("background-color","#ff9900");
+		
+		var bgcolors;
+		
+		$("table>tbody>tr").mouseover(
+			function(){
+				bgcolors = $(this).css("background-color");
+				$(this).css("background-color","#3399ff");
+			}
+		);
+		$("table>tbody>tr").mouseout(
+			function(){
+				$(this).css("background-color",bgcolors);
+			}
+		);
+
+		$("#ok").click(
+			function(){
+				var con = $("#content").val();
+				$("table>tbody>tr").each(
+					function(){
+						$(this).hide();
+						$(this).filter($("table>tbody>tr:contains('"+con+"')")).show();
+					}
+				);
+				//$("table>tbody>tr").hide();
+				//$("table>tbody>tr:contains('"+con+"')").show();
+			}
+		);
+
+
+	});
+  </script>
+ </head>
+
+ <body>
+ <input type="text" id="content" name="content"/><input type="button" id="ok" value="确定"/>
+  <table align="center">
+	<thead>
+		<tr>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年龄</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>张一</td>
+			<td>男</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>张二</td>
+			<td>男</td>
+			<td>21</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>男</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>张四</td>
+			<td>男</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>张五</td>
+			<td>男</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>张六</td>
+			<td>男</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>王五</td>
+			<td>男</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>赵六</td>
+			<td>男</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>白战云</td>
+			<td>男</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>阳阳</td>
+			<td>男</td>
+			<td>25</td>
+		</tr>
+
+	</tbody>
+  </table>
+ </body>
+</html>

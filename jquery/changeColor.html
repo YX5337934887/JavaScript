@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>无标题文档</title>
+<style>
+	table{
+		width:600px;
+		text-align:center;
+		border:1px solid green;
+		border-collapse:collapse;
+	}
+	td,th{
+		border:1px solid #999;
+		height:30px;
+	}
+	th{
+		background-color:#CF9;
+	}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+	/*$(document).ready(
+		function()
+		{
+			var tab=$("table");
+			for(var i=1;i<10;i++)
+				tab.append("<tr><td>"+i+"</td></tr>");
+			$("table>tr:odd").css("background-color","#0F6");
+			var color;
+			$("table>tr>td").mouseover(
+				function()
+				{
+					color=$(this).css("background-color");
+					$(this).css("background-color","#0F6");
+				}
+			);
+		}
+	);*/
+	$(document).ready(
+		function()
+		{
+			var tab=$("table");
+			for(var i=1;i<10;i++)
+				tab.append("<tr><td>"+i+"</td></tr>");
+			$("tbody>tr:odd").css("background-color","#0F6");
+			var color;
+			$("tbody>tr>td").mouseover(
+				function()
+				{
+					color=$(this).css("background-color");
+					$(this).css("background-color","#6FC");
+				}
+			);
+			$("tbody>tr>td").mouseout(
+				function()
+				{
+					$(this).css("background-color",color);
+				}
+			);
+			$("#find").click(
+				function()
+				{
+					var content=$(".search").val();
+					$("table>tbody>tr").each(
+						function()
+						{
+							$(this).hide();
+							$(this).filter("table>tbody>tr:contains("+content+")").show();
+						}
+                    );
+				}
+			);
+		}
+	);
+</script>
+</head>
+<body>
+<table border="1">
+	<thead>
+        <tr>
+            <th>a</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<input type="text" class="search"/>
+<input type="button" id="find" value="搜索"/>
+</body>
+</html>
