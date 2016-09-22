@@ -9,6 +9,7 @@
   <title>function</title>
   <script type="text/javascript">
   <!--
+	'use strict';
 	window.alert=function(s){console.log(s);};
 	function abs(x) {
 		/*if (typeof x !== 'number') {
@@ -38,6 +39,45 @@
 		console.log(rest);
 	}
 	foo(1, 2, 3, 4, 5);
+
+	function getAge() {
+		var y = new Date().getFullYear();
+		return y - this.birth;
+	}
+	var xiaoming = {
+		name: '小明',
+		birth: 1990,
+		age: getAge
+			/*
+			function () {
+			*/
+			/*
+				var that = this; // 在方法内部一开始就捕获this
+				function getAgeFromBirth() {
+					var y = new Date().getFullYear();
+					return y - that.birth; // 用that而不是this
+				}
+			*/
+			/*
+				function getAgeFromBirth() {
+					var y = new Date().getFullYear();
+					return y - this.birth; //this 指向window对象
+				}
+				return getAgeFromBirth();
+			*/
+			/*
+			}
+			var y = new Date().getFullYear();
+			return y - this.birth; //this 指向当前对象
+			*/
+	};
+	var fn = xiaoming.age;
+	//fn(); // Uncaught TypeError: Cannot read property 'birth' of undefined
+	alert(fn.apply(xiaoming));
+	alert(getAge.apply(xiaoming));
+
+	alert(xiaoming.age()); // 26
+
   //-->
   </script>
  </head>
