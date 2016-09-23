@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>string compare</title>
+	<script type="text/javascript">
+		window.alert=function(s){ console.log(s);};
+		function test(){
+			//1)纯数字之间比较
+			alert(1<3);//true
+			
+			//2)数字字符串比较，会将其先转成数字
+			alert("1"<"3");//true
+			alert("123"<"123");//false
+			
+			//3)纯字符串比较,先转成ascii码
+			alert("a"<"b");//true
+			alert("abc"<"aad");//false,多纯字母比较，会依次比较ascii码
+			
+			//4)汉字比较
+			alert("我".charCodeAt());//25105
+			alert("的".charCodeAt());//30340
+			alert("我"<"的");//true,汉字比较,转成ascii码
+			
+			//5)当数字和字符串比较，且字符串为数字。则将数字字符串转为数字
+			alert(123<"124");//true,下面一句代码得出124的ascii码为49，所以并不是转成ascii比较
+			alert("124".charCodeAt());//49
+			
+			//6)当数字和字符串比较,且字符串为非纯数字时,则将非数字字符串转成数字的时候会转换为NaN,当NaN和数字比较时不论大小都返回false.
+			alert(13>"abc");//false
+		}
+		test();
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
