@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>sort</title>
+  <script type="text/javascript">
+  <!--
+	window.alert=function(s){ console.log(s);};
+	var a;
+	// 看上去正常的结果:
+	a = ['Google', 'Apple', 'Microsoft'].sort(); // ['Apple', 'Google', 'Microsoft'];
+	alert(a);
+
+	// apple排在了最后:
+	a = ['Google', 'apple', 'Microsoft'].sort(); // ['Google', 'Microsoft", 'apple']
+	alert(a);
+
+	// 无法理解的结果:
+	a = [10, 20, 1, 2].sort(); // [1, 10, 2, 20]
+	alert(a);
+
+	var arr = [10, 20, 1, 2];
+	a = arr.sort(function (x, y) {
+		if (x < y) {
+			return -1;
+		}
+		if (x > y) {
+			return 1;
+		}
+		return 0;
+	}); // [1, 2, 10, 20]
+	alert("arr:"+arr);
+	alert(a);
+
+	//var arr = [10, 20, 1, 2];
+	a = arr.sort(function (x, y) {
+		if (x < y) {
+			return 1;
+		}
+		if (x > y) {
+			return -1;
+		}
+		return 0;
+	}); // [20, 10, 2, 1]
+	alert("arr:"+arr);
+	alert(a);
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
