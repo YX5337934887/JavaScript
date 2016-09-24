@@ -36,7 +36,7 @@
 	alert("arr:"+arr);
 	alert(a);
 
-	//var arr = [10, 20, 1, 2];
+	arr = [10, 20, 1, 2];
 	a = arr.sort(function (x, y) {
 		if (x < y) {
 			return 1;
@@ -48,6 +48,26 @@
 	}); // [20, 10, 2, 1]
 	alert("arr:"+arr);
 	alert(a);
+
+	arr = ['Google', 'apple', 'Microsoft'];
+	arr.sort(function (s1, s2) {
+		x1 = s1.toUpperCase();
+		x2 = s2.toUpperCase();
+		if (x1 < x2) {
+			return -1;
+		}
+		if (x1 > x2) {
+			return 1;
+		}
+		return 0;
+	}); // ['apple', 'Google', 'Microsoft']
+	alert("arr:"+arr);
+
+	var a1 = ['B', 'A', 'C'];
+	var a2 = a1.sort();
+	alert(a1); // ['A', 'B', 'C']
+	alert(a2); // ['A', 'B', 'C']
+	alert(a1 === a2); // true, a1和a2是同一对象
 
   //-->
   </script>
