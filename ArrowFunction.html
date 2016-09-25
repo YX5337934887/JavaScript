@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Arrow Function</title>
+  <script type="text/javascript">
+  <!--
+	window.alert=function(s){ console.log(s);};
+	var obj = {
+		birth: 1990,
+		getAge: function () {
+			var b = this.birth; // 1990
+			var fn = () => new Date().getFullYear() - this.birth; // this指向obj对象
+			return fn();
+		}
+	};
+	alert(obj.getAge()); // 26
+
+	var obj = {
+		birth: 1990,
+		getAge: function (year) {
+			var b = this.birth; // 1990
+			var fn = (y) => y - this.birth; // this.birth仍是1990
+			return fn.call(/*{birth:2000}*/null, year);
+		}
+	};
+	alert(obj.getAge(2016)); // 26
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
