@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Generators</title>
+  <script type="text/javascript">
+  <!--
+	window.alert=function(s){console.log(s);};
+	/*
+	function fib(max) {
+		var
+			t,
+			a = 0,
+			b = 1,
+			arr = [0, 1];
+		while (arr.length < max) {
+			t = a + b;
+			a = b;
+			b = t;
+			arr.push(t);
+		}
+		return arr;
+	}
+
+	// 测试:
+	alert(fib(5)); // [0, 1, 1, 2, 3]
+	alert(fib(10)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+	*/
+	function* fib(max) {
+		var
+			t,
+			a = 0,
+			b = 1,
+			n = 1;
+		while (n < max) {
+			yield a;
+			t = a + b;
+			a = b;
+			b = t;
+			n ++;
+		}
+		return a;
+	}
+	alert(fib(5)); // fib {[[GeneratorStatus]]: "suspended", [[GeneratorReceiver]]: Window}
+
+	var f = fib(5);
+	alert(f.next()); // {value: 0, done: false}
+	alert(f.next()); // {value: 1, done: false}
+	alert(f.next()); // {value: 1, done: false}
+	alert(f.next()); // {value: 2, done: false}
+	alert(f.next()); // {value: 3, done: true}
+
+	for (var x of fib(5)) {
+		console.log(x); // 依次输出0, 1, 1, 2, 3
+	}
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
